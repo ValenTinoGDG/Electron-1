@@ -133,7 +133,8 @@ ipcMain.on('refresh-user-data', async (_event, userId) => {
         console.error('❌ No idToken found for refresh');
         return;
     }
-
+   
+    
     try {
         const response = await axios.get(`${host}/user/json`, {
             headers: { Cookie: `idToken=${idToken}` }
